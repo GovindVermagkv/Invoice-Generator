@@ -49,6 +49,10 @@
           <th colspan="5" class="make_left">INVOICE Details</th>
         </tr>
         <tr>
+          <td>Payment Id:</td>
+          <td colspan="4">{{ student.payment_id }}</td>
+        </tr>
+        <tr>
           <td>INVOICE Number:</td>
           <td colspan="4">{{ student.invoice_number }}</td>
         </tr>
@@ -176,6 +180,10 @@
                   <input type="text" class="form-control my-2" id="email" v-model="student.invoice_number" required>
                 </div>
                 <div class="formsection">
+                  <label for="name">Payment Id :</label>
+                  <input type="text" class="form-control my-2" id="name" v-model="student.payment_id" required>
+                </div>
+                <div class="formsection">
                   <label for="name">Course Price:</label>
                   <input type="number" class="form-control my-2" id="email" v-model="student.course_price" required
                     @input="Calculation">
@@ -229,6 +237,7 @@ export default {
         course_price: 0,
         course_gst: 0,
         course_Total: 0,
+        payment_id:'pay_'
       }
     }
   },
@@ -347,7 +356,7 @@ export default {
 .table {
   border-collapse: collapse;
   border: 1px solid black;
-  font-size: 10px !important;
+  font-size: 8px !important;
 }
 
 .table th,
